@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: Notion Glossary Actions
+  version: 1.0.0
+servers:
+  - url: https://api.notion.com/v1
+paths:
+  /pages:
+    post:
+      operationId: createGlossaryPage
+      summary: Create a glossary entry in Notion
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Notion-Version
+          in: header
+          required: true
+          schema:
+            type: string
+          example: "2022-06-28"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              parent:
+                database_id: "26bf42a683f7809bad20ee68f1532ceb"
+              properties:
+                Term:
+                  title:
+                    - text:
+                        content: "Test term"
+                Definition:
+                  rich_text:
+                    - text:
+                        content: "test definition"
+                Source:
+                  url: "https://www.google.com"
+      responses:
+        '200':
+          description: Page created
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
