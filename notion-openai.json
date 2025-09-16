@@ -5,7 +5,9 @@
     "version": "1.0.0"
   },
   "servers": [
-    { "url": "https://example.com" }
+    {
+      "url": "https://example.com"
+    }
   ],
   "paths": {
     "/ping": {
@@ -14,7 +16,7 @@
         "summary": "A simple ping endpoint",
         "responses": {
           "200": {
-            "description": "Pong response"
+            "description": "pong"
           }
         }
       }
