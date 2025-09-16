@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Hello World API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://example.com" }
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "operationId": "ping",
+        "summary": "A simple ping endpoint",
+        "responses": {
+          "200": {
+            "description": "Pong response"
+          }
+        }
+      }
+    }
+  }
+}
