@@ -1,48 +1,14 @@
 openapi: 3.0.1
 info:
-  title: Notion Glossary Actions
+  title: Hello World API
   version: 1.0.0
 servers:
-  - url: "https://api.notion.com/v1"
+  - url: "https://example.com"
 paths:
-  /pages:
-    post:
-      operationId: createGlossaryPage
-      summary: Create a glossary entry in Notion
-      security:
-        - bearerAuth: []
-      parameters:
-        - in: header
-          name: Notion-Version
-          required: true
-          schema:
-            type: string
-          example: "2022-06-28"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-            example:
-              parent:
-                database_id: "26bf42a683f7809bad20ee68f1532ceb"
-              properties:
-                Term:
-                  title:
-                    - text:
-                        content: "Test term"
-                Definition:
-                  rich_text:
-                    - text:
-                        content: "test definition"
-                Source:
-                  url: "https://www.google.com"
+  /ping:
+    get:
+      operationId: ping
+      summary: A simple ping endpoint
       responses:
         "200":
-          description: Page created successfully
-components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
+          description: Pong response
