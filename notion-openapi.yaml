@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.1
 info:
   title: Notion Glossary Actions
   version: 1.0.0
@@ -12,8 +12,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - name: Notion-Version
-          in: header
+        - in: header
+          name: Notion-Version
           required: true
           schema:
             type: string
@@ -22,6 +22,8 @@ paths:
         required: true
         content:
           application/json:
+            schema:
+              type: object
             example:
               parent:
                 database_id: "26bf42a683f7809bad20ee68f1532ceb"
@@ -37,11 +39,10 @@ paths:
                 Source:
                   url: "https://www.google.com"
       responses:
-        '200':
-          description: Page created
+        "200":
+          description: Page created successfully
 components:
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
-
