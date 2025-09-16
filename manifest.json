@@ -9,6 +9,6 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://sashagolds.github.io/gpt-notion-action/notion-openapi.json"
+    "url": "https://sashagolds.github.io/gpt-notion-action/notion-openai.json"
   }
 }
