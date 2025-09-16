@@ -4,9 +4,11 @@
   "name_for_model": "notion_glossary",
   "description_for_human": "Save glossary terms and definitions to your Notion database",
   "description_for_model": "Use this action to insert glossary terms with definitions and sources into the Notion database. Always include Notion-Version: 2022-06-28.",
-  "auth": { "type": "bearer" },
+  "auth": {
+    "type": "bearer"
+  },
   "api": {
-  "type": "openapi",
-  "url": "https://sashagolds.github.io/gpt-notion-action/notion-openapi.yaml"
-}
+    "type": "openapi",
+    "url": "https://sashagolds.github.io/gpt-notion-action/notion-openapi.yaml"
+  }
 }
