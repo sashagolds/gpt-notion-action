@@ -5,15 +5,13 @@
     "version": "1.0.0"
   },
   "servers": [
-    {
-      "url": "https://example.com"
-    }
+    { "url": "https://example.com" }
   ],
   "paths": {
     "/ping": {
       "get": {
         "operationId": "ping",
-        "summary": "A simple ping endpoint",
+        "summary": "Simple ping endpoint",
         "responses": {
           "200": {
             "description": "pong"
