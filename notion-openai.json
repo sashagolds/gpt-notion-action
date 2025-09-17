@@ -1,23 +1,56 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Hello World API",
-    "version": "1.0.0"
+    "title": "Notion Test API",
+    "description": "Minimal Action to test Notion",
+    "version": "v1.0.0"
   },
   "servers": [
-    { "url": "https://example.com" }
+    { "url": "https://api.notion.com/v1" }
   ],
   "paths": {
-    "/ping": {
-      "get": {
-        "operationId": "ping",
-        "summary": "Simple ping endpoint",
-        "responses": {
-          "200": {
-            "description": "pong"
+    "/pages": {
+      "post": {
+        "operationId": "createTestPage",
+        "summary": "Create a test page in Notion",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Notion-Version",
+            "required": true,
+            "schema": { "type": "string" },
+            "example": "2022-06-28"
           }
-        }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "parent": { "database_id": "26bf42a683f7809bad20ee68f1532ceb" },
+                "properties": {
+                  "Term": {
+                    "title": [{ "text": { "content": "Hello from GPT Action" } }]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Page created" }
+        },
+        "security": [{ "bearerAuth": [] }]
       }
     }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {}
   }
 }
